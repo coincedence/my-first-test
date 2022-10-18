@@ -36,7 +36,7 @@ class LoginPage
 }
 class UserPage
 {
-    private final String usernameXPath = "//div[@class='tico ellip']";
+    private final String usernameXPath = "//a[@data-l='t,userPage']/div";
     private final SelenideElement usernameField = $(By.xpath(usernameXPath));
     public boolean checkUsername(String expectedUsername)
     {
