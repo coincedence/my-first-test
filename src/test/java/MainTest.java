@@ -22,9 +22,9 @@ public class MainTest {
 }
 class LoginPage
 {
-    private final SelenideElement loginField =$(By.xpath("//*[@id='field_email']"));
-    private final SelenideElement passwordField =$(By.xpath("//*[@id=\"field_password\"]"));
-    private final SelenideElement loginButton =$(By.xpath("//*[@id=\"anonymPageContent\"]/div/div[1]/div[2]/div/div[2]/div[2]/div[1]/form/div[4]/input"));
+    private final SelenideElement loginField =$(By.xpath("//input[@id='field_email']"));
+    private final SelenideElement passwordField =$(By.xpath("//input[@id='field_password']"));
+    private final SelenideElement loginButton =$(By.xpath("//div[@class='login-form-actions']/input"));
 
 
     public void login(String email, String pwd)
@@ -36,7 +36,7 @@ class LoginPage
 }
 class UserPage
 {
-    private final String usernameXPath = "//*[@id=\"hook_Block_Navigation\"]/div/div/div[1]/a/div";
+    private final String usernameXPath = "//div[@class='tico ellip']";
     private final SelenideElement usernameField = $(By.xpath(usernameXPath));
     public boolean checkUsername(String expectedUsername)
     {
