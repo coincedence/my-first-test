@@ -1,7 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,6 +16,7 @@ public class MainTest {
 
         loginPage.login("technoPol3", "technoPolis2022");
         assertTrue(userPage.checkUsername("technoPol3 technoPol3"));
+
         clearBrowserCookies();
     }
 }
@@ -25,7 +25,6 @@ class LoginPage
     private final SelenideElement loginField =$(By.xpath("//input[@id='field_email']"));
     private final SelenideElement passwordField =$(By.xpath("//input[@id='field_password']"));
     private final SelenideElement loginButton =$(By.xpath("//div[@class='login-form-actions']/input"));
-
 
     public void login(String email, String pwd)
     {
@@ -38,6 +37,7 @@ class UserPage
 {
     private final String usernameXPath = "//a[@data-l='t,userPage']/div";
     private final SelenideElement usernameField = $(By.xpath(usernameXPath));
+
     public boolean checkUsername(String expectedUsername)
     {
         if(!$$(By.xpath(usernameXPath)).isEmpty())
